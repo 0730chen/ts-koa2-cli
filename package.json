@@ -1,0 +1,13 @@
+{
+  "name": "koa2-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^2.11.0"
+  },
+  "dependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/node": "^13.13.4"
+  }
+}
