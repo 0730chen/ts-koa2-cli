@@ -1,4 +1,5 @@
-import Koa, {BaseContext, Request} from 'koa'
+import Koa,{BaseContext} from 'koa'
+// const Koa =  require('koa')
 const app = new Koa()
 
 app.use( async ( ctx:BaseContext ) => {

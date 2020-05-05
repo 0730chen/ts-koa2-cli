@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@types/node": "^13.13.4",
     "debug": "^4.1.1",
     "ejs": "~2.3.3",
     "koa": "^2.7.0",
@@ -22,6 +23,8 @@
     "koa-views": "^6.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
   }
 }
