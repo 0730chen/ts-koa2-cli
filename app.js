@@ -5,7 +5,12 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const port = process.argv[2] //指定端口
 
+if (!port) {
+    console.log('请指定端口号好不啦？\nnode server.js 8888 这样不会吗？')
+    process.exit(1)
+}
 const index = require('./routes/index')
 const users = require('./routes/users')
 

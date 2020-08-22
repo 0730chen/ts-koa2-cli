@@ -9,6 +9,12 @@ const logger = require('koa-logger')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
+const port = process.argv[2] //指定端口
+
+if (!port) {
+    console.log('请指定端口号好不啦？\nnode server.js 8888 这样不会吗？')
+    process.exit(1)
+}
 
 // error handler
 onError(app)
@@ -26,12 +32,12 @@ app.use(views(__dirname + '/views', {
 }))
 
 // logger
-app.use(async (ctx:Koa.Context, next:Koa.Next) => {
-    const start = +new Date()
-    await next()
-    const ms = +new Date() as number - start as number
-    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
-})
+// app.use(async (ctx:Koa.Context, next:Koa.Next) => {
+//     const start = +new Date()
+//     await next()
+//     const ms = +new Date() as number - start as number
+//     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+// })
 
 // routes
 app.use(index.routes())
@@ -42,4 +48,6 @@ app.on('error', (err, ctx) => {
     console.error('server error', err, ctx)
 });
 
-module.exports = app
+app.listen(port,()=>{
+    console.log('服务启动成功')
+})
